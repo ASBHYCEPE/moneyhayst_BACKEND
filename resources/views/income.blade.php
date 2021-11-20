@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SIDEBAR</title>
+        <title>INCOME</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
         <link rel="preconnect" href="https://fonts.googleapis.com">

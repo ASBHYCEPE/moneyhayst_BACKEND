@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SIDEBAR</title>
+        <title>EXPENSE</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,9 +16,9 @@
                 <h1>DASHBOARD</h1>
             </div>
             <div class="sidebar-content">
-                <a href="#" class="sidebar-item">HOME</a>
-                <a href="#" class="sidebar-item">INCOME</a>
-                <a href="#" class="sidebar-item">EXPENSE</a>
+                <a href="/" class="sidebar-item">HOME</a>
+                <a href="/income" class="sidebar-item">INCOME</a>
+                <a href="/expense" class="sidebar-item">EXPENSE</a>
             </div>
         </div>
         <header>
