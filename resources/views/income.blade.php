@@ -18,7 +18,7 @@
             <div class="sidebar-content">
                 <a href="/" class="sidebar-item">HOME</a>
                 <a href="/income" class="sidebar-item">INCOME</a>
-                <a href="/income" class="sidebar-item">EXPENSE</a>
+                <a href="/expense" class="sidebar-item">EXPENSE</a>
             </div>
         </div>
         <header>
