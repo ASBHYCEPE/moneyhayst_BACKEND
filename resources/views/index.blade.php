@@ -22,7 +22,7 @@
             </div>
         </div>
         <header>
-            <h1>MONEY HAYST</h1>
+            <h2>MONEYHAYST BUDGET AND EXPENSE TRACKER</h2>
         </header>
 
         <div class="main-content">
