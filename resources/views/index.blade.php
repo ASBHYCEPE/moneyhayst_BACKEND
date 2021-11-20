@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SIDEBAR</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{asset('css/main.css')}}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" id="dynamik-viewport"/>
+    </head>
+    <body>
+        <div class="sidebar">
+            <div class="logo">
+                <h1>DASHBOARD</h1>
+            </div>
+            <div class="sidebar-content">
+                <a href="#" class="sidebar-item">HOME</a>
+                <a href="#" class="sidebar-item">INCOME</a>
+                <a href="#" class="sidebar-item">EXPENSE</a>
+            </div>
+        </div>
+        <header>
+            <h1>MONEY HAYST</h1>
+        </header>
+
+        <div class="main-content">
+            
+        </div>
+    </body>
+</html>
