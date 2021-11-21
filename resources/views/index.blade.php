@@ -4,6 +4,8 @@
         <title>MONEYHAYST</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="{{asset('js/selection.js')}}"></script>
         <link rel="stylesheet" href="{{asset('css/home.css')}}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
