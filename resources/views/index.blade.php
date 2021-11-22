@@ -84,16 +84,16 @@
                     <div id="summary-container">
                         <div class="display-item-amount">
                             <p id="amount-display">
-                                ₱0
+                                ₱{{$totalBalance}}
                             </p>
-                            <p>TOTAL AMOUNT</p>
+                            <p>TOTAL BALANCE</p>
                         </div>
                         <div class="summary-item-display">
                             <div id="display-item-income">
-                                <p>INCOME: ₱</p>
+                                <p>INCOME: ₱{{$totalIncome}}</p>
                             </div>
                             <div id="display-item-expense">
-                                <p>EXPENSE: ₱</p>
+                                <p>EXPENSE: ₱{{$totalExpense}}</p>
                             </div>
                         </div>
                     </div>
