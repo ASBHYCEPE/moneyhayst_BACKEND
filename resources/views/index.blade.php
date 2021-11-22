@@ -81,6 +81,22 @@
                     <div class="content-title">
                         <h4>SUMMARY DETAILS</h4>
                     </div>
+                    <div id="summary-container">
+                        <div class="display-item-amount">
+                            <p id="amount-display">
+                                ₱0
+                            </p>
+                            <p>TOTAL AMOUNT</p>
+                        </div>
+                        <div class="summary-item-display">
+                            <div id="display-item-income">
+                                <p>INCOME: ₱</p>
+                            </div>
+                            <div id="display-item-expense">
+                                <p>EXPENSE: ₱</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
