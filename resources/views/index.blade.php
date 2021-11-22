@@ -34,7 +34,7 @@
                     <div class="content-title">
                         <h4>INSERT TRANSACTION</h4>
                     </div>
-                    <form id="main-form" action="">
+                    <form id="main-form" action="/post">
                         @csrf
                         <div class="form-block">
                             <div class="col-3">
