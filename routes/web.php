@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\navigationController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,5 @@ use App\Http\Controllers\navigationController;
 Route::get('/', [navigationController::class, 'main']);
 Route::get('/income',[navigationController::class, 'income']);
 Route::get('/expense',[navigationController::class, 'expense']);
+Route::post('/post', [TransactionController::class, 'store']);
 
