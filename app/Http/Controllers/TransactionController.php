@@ -36,7 +36,18 @@ class TransactionController extends Controller
      */
     public function store(StoretransactionRequest $request)
     {
-        //
+        $transac = new transaction();
+
+        $data = $request->input();
+
+        $transac->transac_type = $data['transacType'];
+        $transac->category = $data['category'];
+        $transac->transac_date = $data['transacDate'];
+        $transac->amount = $data['totalAmount'];
+
+        $transac->save();
+
+        return redirect('/');
     }
 
     /**
