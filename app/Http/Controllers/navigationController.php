@@ -9,13 +9,15 @@ class navigationController extends Controller
 {
     public function main(){
 
+        $transacData = DB::select('SELECT * FROM transactions ORDER BY transac_date DESC LIMIT 5');
         $totalIncome = DB::table('transactions')->where('transac_type', 0)->sum('amount');
         $totalExpense = DB::table('transactions')->where('transac_type', 1)->sum('amount');
         $totalBalance = $totalIncome - $totalExpense;
 
         return view('index',['totalIncome' => $totalIncome, 
                              'totalExpense' => $totalExpense,
-                             'totalBalance' => $totalBalance
+                             'totalBalance' => $totalBalance,
+                             'transacData' => $transacData
                             ]);
     }
 
