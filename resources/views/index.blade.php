@@ -99,6 +99,21 @@
                     </div>
                 </div>
             </div>
+            <div class="block">
+                <div class="block-title">
+                    <h2>RECENT TRANSACTIONS</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Transaction Type</td>
+                            <td>Category</td>
+                            <td>Transaction Date</td>
+                            <td>Total Amount</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
     </body>
 </html>
