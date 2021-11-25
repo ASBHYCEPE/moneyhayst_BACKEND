@@ -19,6 +19,12 @@ table{
     table-layout: fixed;
 }
 
+table tbody td{
+    background-color: #bdc3c7;
+    border-radius: 5px;
+    padding: 10px;
+}
+
 table thead td{
     padding: 5px;
     border-radius: 5px;
