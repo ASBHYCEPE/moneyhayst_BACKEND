@@ -56,7 +56,7 @@ class TransactionController extends Controller
      * @param  \App\Models\transaction  $transaction
      * @return \Illuminate\Http\Response
      */
-    public function show(transaction $transaction)
+    public function show()
     {
         //
     }

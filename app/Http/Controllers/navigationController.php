@@ -26,6 +26,13 @@ class navigationController extends Controller
     }
 
     public function expense(){
-        return view('expense');
+
+        $transacData = DB::select('SELECT * FROM transactions');
+        $totalExpense = DB::table('transactions')->where('transac_type', 1)->sum('amount');
+        return view('expense', ['transacData' => $transacData,
+                                'totalExpense' => $totalExpense
+                                ]);
     }
+    
+    
 }
