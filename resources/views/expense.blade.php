@@ -28,51 +28,55 @@
 
         <div class="main-content">
 
-            <div class="categories">
-                <form action = "/postExpense" method = "POST">
-                    @csrf
-                    <select name="category" class= "selection" required onchange = "this.form.submit()">
-                        <Option value="" disabled selected>Choose a Category</Option>
-                        <option value="All">Show All</option>                 
-                        <option value="FOOD">Food</option>
-                        <option value="UTILITIES">Utilities</option>
-                        <option value="COMMUNICATION">Communication</option>
-                        <option value="GROCERY">Grocery</option>
-                        <option value="MEDICAL">Medical</option>
-                        <option value="ACCESSORIES">Accessories</option>
-                        <option value="TRANSPORTATION">Transportation</option>
-                        <option value="OTHERS">Others</option>
-                    </select>
-                </form>
-            </div>
+            <div class = "cell">
+                <div class="categories">
+                    <form action = "/postExpense" method = "POST">
+                        @csrf
+                        <select name="category" class= "selection" required onchange = "this.form.submit()">
+                            <Option value="" disabled selected>Choose a Category</Option>
+                            <option value="All">Show All</option>                 
+                            <option value="FOOD">Food</option>
+                            <option value="UTILITIES">Utilities</option>
+                            <option value="COMMUNICATION">Communication</option>
+                            <option value="GROCERY">Grocery</option>
+                            <option value="MEDICAL">Medical</option>
+                            <option value="ACCESSORIES">Accessories</option>
+                            <option value="TRANSPORTATION">Transportation</option>
+                            <option value="OTHERS">Others</option>
+                        </select>
+                    </form>
+                </div>
 
-            <div class = "printing">
-                <table>
-                    <thead>
-                        <tr>
-                            <td>Category</td>
-                            <td>Transaction Date</td>
-                            <td>Amount</td>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                        @foreach ($transacData as $key => $data)
+                <div class = "printing">
+                    <table>
+                        <thead>
                             <tr>
-                                <td>{{$data->category}}</td>
-                                <td>{{$data->transac_date}}</td>
-                                <td>{{$data->amount}}</td>
-                            </tr>                        
-                        @endforeach
-                        
-                    </tbody>
-                </table>
+                                <td>Category</td>
+                                <td>Transaction Date</td>
+                                <td>Amount</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @foreach ($transacData as $key => $data)
+                                <tr>
+                                    <td>{{$data->category}}</td>
+                                    <td>{{$data->transac_date}}</td>
+                                    <td>{{$data->amount}}</td>
+                                </tr>                        
+                            @endforeach
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <h3 class="expenses">Total Expenses: {{$totalExpense}}</h3>
+                </div>
             </div>
 
-            <div>
-                <h3 class="expenses">Total Expenses: {{$totalExpense}}</h3>
-            </div>
+            
         </div>
     </body>
 </html>
