@@ -40,7 +40,7 @@ class TransactionController extends Controller
     {
         $transac = new transaction();
 
-        $data = $request->only('category-type');
+        $data = $request->input();
 
         $transac->transac_type = $data['transacType'];
         $transac->category = $data['category'];
