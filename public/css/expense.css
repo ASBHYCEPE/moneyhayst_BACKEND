@@ -1,0 +1,65 @@
+.expenses{
+    padding: 10px;
+    margin: 35px 0 0 60px;
+    max-width: 15%;
+    color: #cf3a3a;
+    border-bottom: 2px solid black;
+}
+
+.categories{
+    padding: 20px;
+    margin: 50px 0 0 83%;
+}
+
+.printing{
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.selection{
+    padding: 10px;
+    border-color: transparent;
+    border-radius: 10px;
+    background-color: #34495e;
+    color: white;
+    font-family: monospace;
+}
+
+table{
+    text-align: center;
+    font-family: monospace;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr td{
+    border-radius: 7px;
+    padding: 15px 200px; 
+    font-size: 18px;
+}
+
+table td{
+    padding: 15px 30px;
+}
+
+table thead tr{
+    background-color: #000000;
+    color: white;
+}
+
+table tbody tr td{
+    font-size: 17px;
+    font-style: italic;
+    font-weight: bold;
+    border-bottom: 1px solid #dddddd;
+}
+
+table tr:nth-of-type(even){
+    background-color: #ededed;
+}
+
+table tbody tr:last-of-type{
+    border-bottom: 3px solid maroon;
+}

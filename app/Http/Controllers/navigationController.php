@@ -26,7 +26,7 @@ class navigationController extends Controller
     }
 
     public function expense(){
-        $transacData = DB::select('SELECT * FROM transactions');
+        $transacData = DB::select("SELECT * FROM transactions WHERE transac_type = ?", [1]);
         $totalExpense = DB::table('transactions')->where('transac_type', 1)->sum('amount');
         return view('expense', ['transacData' => $transacData,
                                 'totalExpense' => $totalExpense

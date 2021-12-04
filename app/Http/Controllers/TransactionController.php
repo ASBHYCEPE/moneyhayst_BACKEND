@@ -62,7 +62,12 @@ class TransactionController extends Controller
     {
         $category = $req->only('category');
         $temp = $category['category'];
-        $transacData = DB::select("SELECT * FROM transactions WHERE category = ?", [$temp]);
+
+        if($temp == "All")
+            $transacData = DB::select("SELECT * FROM transactions WHERE transac_type = ?", [1]);
+        else
+            $transacData = DB::select("SELECT * FROM transactions WHERE category = ?", [$temp]);
+            
         $totalExpense = DB::table('transactions')->where('transac_type', 1)->sum('amount');
         return view('expense', ['transacData' => $transacData,
                                     'totalExpense' => $totalExpense

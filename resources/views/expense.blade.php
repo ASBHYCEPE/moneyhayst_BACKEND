@@ -4,6 +4,7 @@
         <title>EXPENSE</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
+        <link rel="stylesheet" href="{{asset('css/expense.css')}}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
@@ -26,28 +27,27 @@
         </header>
 
         <div class="main-content">
-            
-            <div>
+
+            <div class="categories">
                 <form action = "/postExpense" method = "POST">
                     @csrf
-                    <select name="category" id="category-type" required onchange = "this.form.submit()">
-                        <Option value="" disabled selected>Choose a Category</Option>                 
-                        <option name = "food" value="FOOD">Food</option>
-                        <option name = "utilities" value="UTILITIES">Utilities</option>
-                        <option name = "comms" value="COMMUNICATION">Communication</option>
-                        <option name = "grocery" value="GROCERY">Grocery</option>
-                        <option name = "meds" value="MEDICAL">Medical</option>
-                        <option name = "accessories" value="ACCESSORIES">Accessories</option>
-                        <option name = "transpo" value="TRANSPORTATION">Transportation</option>
-                        <option name = "others" value="OTHERS">Others</option>
+                    <select name="category" class= "selection" required onchange = "this.form.submit()">
+                        <Option value="" disabled selected>Choose a Category</Option>
+                        <option value="All">Show All</option>                 
+                        <option value="FOOD">Food</option>
+                        <option value="UTILITIES">Utilities</option>
+                        <option value="COMMUNICATION">Communication</option>
+                        <option value="GROCERY">Grocery</option>
+                        <option value="MEDICAL">Medical</option>
+                        <option value="ACCESSORIES">Accessories</option>
+                        <option value="TRANSPORTATION">Transportation</option>
+                        <option value="OTHERS">Others</option>
                     </select>
                 </form>
             </div>
 
-            <div>
-
+            <div class = "printing">
                 <table>
-
                     <thead>
                         <tr>
                             <td>Category</td>
@@ -67,15 +67,12 @@
                         @endforeach
                         
                     </tbody>
-
                 </table>
-
             </div>
 
             <div>
-                <h3>Total Expenses: </h3>
+                <h3 class="expenses">Total Expenses: {{$totalExpense}}</h3>
             </div>
-
         </div>
     </body>
 </html>
