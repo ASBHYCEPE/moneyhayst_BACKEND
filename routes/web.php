@@ -14,8 +14,11 @@ use App\Http\Controllers\TransactionController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Route::get('/expense', function(){
+//     return view('expense')->with('transacData');
+// });
 Route::get('/', [navigationController::class, 'main']);
 Route::get('/income',[navigationController::class, 'income']);
-Route::get('/expense',[navigationController::class, 'expense']);
 Route::post('/post', [TransactionController::class, 'store']);
+Route::get('/expense',[navigationController::class, 'expense']);
+Route::post('/postExpense',[TransactionController::class, 'show']);

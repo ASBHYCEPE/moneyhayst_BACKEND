@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\transaction;
 use App\Http\Requests\StoretransactionRequest;
 use App\Http\Requests\UpdatetransactionRequest;
+use Illuminate\Http\Request;
+use DB;
 
 class TransactionController extends Controller
 {
@@ -38,7 +40,7 @@ class TransactionController extends Controller
     {
         $transac = new transaction();
 
-        $data = $request->input();
+        $data = $request->only('category-type');
 
         $transac->transac_type = $data['transacType'];
         $transac->category = $data['category'];
@@ -56,9 +58,15 @@ class TransactionController extends Controller
      * @param  \App\Models\transaction  $transaction
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Request $req)
     {
-        //
+        $category = $req->only('category');
+        $temp = $category['category'];
+        $transacData = DB::select("SELECT * FROM transactions WHERE category = ?", [$temp]);
+        $totalExpense = DB::table('transactions')->where('transac_type', 1)->sum('amount');
+        return view('expense', ['transacData' => $transacData,
+                                    'totalExpense' => $totalExpense
+                                    ]);
     }
 
     /**
