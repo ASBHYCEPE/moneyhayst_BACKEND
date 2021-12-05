@@ -27,26 +27,38 @@
         </header>
 
         <div class="main-content">
-
+            <div class="block-title">
+                <h2>EXPENSE SUMMARY DETAILS</h2>
+            </div>
             <div class = "cell">
-                <div class="categories">
-                    <form action = "/postExpense" method = "POST">
-                        @csrf
-                        <select name="category" class= "selection" required onchange = "this.form.submit()">
-                            <Option value="" disabled selected>Choose a Category</Option>
-                            <option value="All">Show All</option>                 
-                            <option value="FOOD">Food</option>
-                            <option value="UTILITIES">Utilities</option>
-                            <option value="COMMUNICATION">Communication</option>
-                            <option value="GROCERY">Grocery</option>
-                            <option value="MEDICAL">Medical</option>
-                            <option value="ACCESSORIES">Accessories</option>
-                            <option value="TRANSPORTATION">Transportation</option>
-                            <option value="OTHERS">Others</option>
-                        </select>
-                    </form>
+                <div class="content-block">
+                    <div class="display-expense">
+                        <div class="display-item">
+                            <p>₱{{$totalExpense}}</p>
+                        </div>
+                        <div class="display-item">
+                            <p id="label">TOTAL EXPENSE</p>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <form action = "/postExpense" method = "POST">
+                            @csrf
+                            <select name="category" class= "selection" required onchange = "this.form.submit()">
+                                <Option value="" disabled selected>Choose a Category</Option>
+                                <option value="All">Show All</option>                 
+                                <option value="FOOD">Food</option>
+                                <option value="UTILITIES">Utilities</option>
+                                <option value="COMMUNICATION">Communication</option>
+                                <option value="GROCERY">Grocery</option>
+                                <option value="MEDICAL">Medical</option>
+                                <option value="ACCESSORIES">Accessories</option>
+                                <option value="TRANSPORTATION">Transportation</option>
+                                <option value="OTHERS">Others</option>
+                            </select>
+                        </form>
+                    </div>
                 </div>
-
+                
                 <div class = "printing">
                     <table>
                         <thead>
@@ -70,13 +82,7 @@
                         </tbody>
                     </table>
                 </div>
-
-                <div>
-                    <h3 class="expenses">Total Expenses: {{$totalExpense}}</h3>
-                </div>
             </div>
-
-            
         </div>
     </body>
 </html>
