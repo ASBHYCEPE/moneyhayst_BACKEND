@@ -22,7 +22,11 @@ class navigationController extends Controller
     }
 
     public function income(){
-        return view('income');
+        $transacData = DB::select("SELECT * FROM transactions WHERE transac_type = ?", [0]);
+        $totalIncome = DB::table('transactions')->where('transac_type', 0)->sum('amount');
+        return view('income', ['transacData' => $transacData,
+                                'totalIncome' => $totalIncome
+                                ]);
     }
 
     public function expense(){

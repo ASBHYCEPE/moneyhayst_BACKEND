@@ -4,6 +4,7 @@
         <title>INCOME</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
+        <link rel="stylesheet" href="{{asset('css/expense.css')}}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
@@ -26,7 +27,55 @@
         </header>
 
         <div class="main-content">
-            
+            <div class="block-title">
+                <h2>INCOME SUMMARY DETAILS</h2>
+            </div>
+            <div class = "cell">
+                <div class="content-block">
+                    <div class="display-expense">
+                        <div class="display-item">
+                            <p>₱{{$totalIncome}}</p>
+                        </div>
+                        <div class="display-item">
+                            <p id="label">TOTAL INCOME</p>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <form action = "/postExpense" method = "POST">
+                            @csrf
+                            <select name="category" class= "selection" required onchange = "this.form.submit()">
+                                <Option value="" disabled selected>Choose a Category</Option>
+                                <option value="CASH">Show All</option>                 
+                                <option value="PAYCHECK">Food</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class = "printing">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Category</td>
+                                <td>Transaction Date</td>
+                                <td>Amount</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @foreach ($transacData as $key => $data)
+                                <tr>
+                                    <td>{{$data->category}}</td>
+                                    <td>{{$data->transac_date}}</td>
+                                    <td>{{$data->amount}}</td>
+                                </tr>                        
+                            @endforeach
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </body>
 </html>
